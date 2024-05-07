@@ -3,7 +3,7 @@ CXX = g++
 CXXFLAGS = -std=c++2a
 
 # Find all .cpp files in the current directory
-SOURCES := $(wildcard *.cpp)
+SOURCES := $(wildcard **/*.cpp)
 
 # Generate corresponding .out file names
 TARGETS := $(SOURCES:.cpp=.out)

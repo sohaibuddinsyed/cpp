@@ -8,7 +8,7 @@ int myFunc(int a) {
 int main() {
     int base = 1;
 
-    // C style functin pointer
+    // C style function pointer
     int (*funcPtr)(int) = myFunc;
     std::cout << funcPtr(10) << std::endl;
 
