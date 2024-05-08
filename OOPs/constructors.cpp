@@ -24,7 +24,9 @@ class Circle {
     // Move assignment
     Circle& operator=(Circle &&c) {
         cout << "Move assignment called" << endl;
-        this -> radius = c.radius;
+        radius = c.radius;
+        c.radius = 0;
+
         return *this;
     }
 
@@ -56,8 +58,8 @@ int main () {
     // Compilers already optimize many cases that formally require a move-construction call 
     // in what is known as Return Value Optimization. Most notably, when the value returned by 
     // a function is used to initialize an object. In these cases, the move constructor may 
-    // actually never get called. Thus, we use std::move() to demonstrate.
-    Circle c3 = move(getObj());
+    // actually never get called. Thus, we use std::move() or explicit cast to rval ref to demonstrate.
+    Circle c3 = (Circle &&) getObj();
     cout << "c3's circumference: " << c3.circum() << '\n';
 
     c3 = move(c1);
