@@ -17,5 +17,6 @@ int main() {
         base++;
         return base + a;
     };
+    
     std::cout << myLambda(10) << std::endl;
 }

@@ -24,6 +24,4 @@ int main() {
     // Non-const get() is called
     Const c2(10);
     cout << c2.get() << endl;
-
-    return 0;
 }

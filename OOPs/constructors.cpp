@@ -40,7 +40,7 @@ Circle getObj() {
 
 int main () {
     Circle foo (10.0);   // functional form
-    Circle bar = 20.0;   // assignment init.
+    Circle bar = 20.0;   // assignment init. (implicit conversion using ctor; disabled on explicit)
     Circle baz {30.0};   // uniform init.
     Circle qux = {40.0}; // POD-like
     cout << "foo's circumference: " << foo.circum() << '\n';

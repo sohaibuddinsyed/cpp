@@ -13,7 +13,9 @@ public:
     Base(int b): base(b) {
         cout << "Base init\n";
     }
-    ~Base() {
+    // Destructor must be virtual incase a pointer to base pointing to derived obj is deleted,
+    // derived destructor must also be called
+    virtual ~Base() {
         cout << "Base destroyed\n";
     }
     // inherited in derived
@@ -52,7 +54,7 @@ int main() {
     Derived d1(10), d2(20);
     Base *b1 = &d1, *b2 = &d2;
 
-    // base ptr can only access all inherited base class members in derived
+    // base ptr can only access all base class members (inherited in derived)
     cout << b1 -> get_base() << endl;
     cout << b2 -> get_base() << endl;
 
