@@ -4,6 +4,7 @@ using namespace std;
 class Const {
     // mutable storage class allows const member functions to mutate values
     mutable int m;
+    int n;
 public:
     Const(): m(0) {}
     Const(int a): m(a) {}
